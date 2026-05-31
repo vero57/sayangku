@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Louisa Candy Larasati💋</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(135deg, #ffd7e5, #fff0f6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .envelope-wrap {
+        cursor: pointer;
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      .envelope {
+        width: min(340px, 85vw);
+        height: 220px;
+        position: relative;
+      }
+      .env-body {
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 100%;
+        background: #ff8eb2;
+        border-radius: 0 0 14px 14px;
+      }
+      .flap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110px;
+        background: #ff6c9b;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform-origin: top;
+        transition: 1s;
+        z-index: 5;
+      }
+      .open .flap {
+        transform: rotateX(180deg);
+      }
+
+      .letter {
+        position: absolute;
+        left: 8%;
+        bottom: 15px;
+        width: 84%;
+        height: 150px;
+        background: #fff;
+        border-radius: 12px;
+        transform: translateY(110%);
+        transition: all 1s ease;
+        opacity: 0;
+        overflow: hidden;
+      }
+
+      .peek .letter {
+        opacity: 1;
+        transform: translateY(-35px);
+      }
+
+      .full .letter {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: min(700px, 92vw);
+        height: min(520px, 75vh);
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+      }
+
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(6px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.8s;
+      }
+      .backdrop.show {
+        opacity: 1;
+      }
+
+      .content {
+        display: none;
+        height: 100%;
+        overflow-y: auto;
+        padding: 24px;
+        line-height: 1.8;
+        color: #555;
+      }
+      .full .content {
+        display: block;
+      }
+
+      .content h1 {
+        font-family: "Dancing Script", cursive;
+        color: #e54782;
+        margin-bottom: 15px;
+      }
+
+      .content::-webkit-scrollbar {
+        width: 5px;
+      }
+      .content::-webkit-scrollbar-thumb {
+        background: #ff8eb2;
+        border-radius: 99px;
+      }
+
+      .hint {
+        margin-top: 20px;
+        color: #d44d7b;
+        font-weight: 600;
+      }
+
+      .fly-heart {
+        position: fixed;
+        width: 95px;
+        left: -150px;
+        bottom: 130px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 1001;
+      }
+      .fly {
+        animation: heartFly 2s forwards;
+      }
+      @keyframes heartFly {
+        to {
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 1;
+        }
+      }
+
+      .msg {
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+        display: none;
+        color: #d44d7b;
+        font-weight: 600;
+      }
+
+      .final {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .bouquet {
+        font-size: 120px;
+        animation: bounce 3s infinite;
+      }
+      @keyframes bounce {
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .love {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(40px, 8vw, 72px);
+        color: #e33f7b;
+        margin-top: 15px;
+        min-height: 90px;
+      }
+
+      .petal {
+        position: fixed;
+        top: -50px;
+        font-size: 22px;
+        animation: fall linear infinite;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(120vh) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <audio id="bgMusic" loop>
+    <source src="happiness.mp3" type="audio/mpeg" />
+  </audio>
+  <body>
+    <div id="blur" class="backdrop"></div>
+
+    <div id="scene1" class="scene">
+      <div id="wrap" class="envelope-wrap">
+        <div id="env" class="envelope">
+          <div class="flap"></div>
+          <div class="env-body"></div>
+
+          <div class="letter">
+            <div class="content">
+              <h1>
+                Untuk Louisa Candy Larasati sayangkuu yg paling cantik, muachh💋
+              </h1>
+
+              <p>
+                SAYANGG OHH SAYANGGG<br /><br />
+
+                sayanggkuu yg paling cantik, dan baik hati. makasii udh jdi
+                bagian terindah dari hidup aku yaa sayangggg, aku bersyukur bgt
+                bisa kenal sama kamu, bisa deket sama kamu, bisa sayang sama
+                kamu, dan bisa jdi bagian dari hidup kamu jg pastinyaa sayangg.
+                aku janji bakal jaga perasaan kamu, jaga hati kamu, dan jaga
+                hubungan kita ini dengan sebaik mungkin. aku pengen kita selalu
+                bahagia bareng-bareng, selalu support satu sama lain, dan selalu
+                jadi tempat curhat yang nyaman buat kita berdua. aku sayang
+                banget sama kamu, lebih dari apapun mwheeheh. sayangg jgn
+                tinggalin akuu yaaa, janji kita bakal selalu bareng sampe tua
+                nnti sayangggg, semangat jg jalanin harinyaa, semoga hari-hari
+                kamu bahagia terus yaa sayanggg, aku bakal selalu ada buat kamu,
+                dukung kamu, dan sayang kamu selamanya. sayangg jg jgn lupa
+                makan, mandi, jaga kesehatan, trs istirahat yg cukup, jgn
+                begadang, aku bakal temenin kamu bobo, aku jg mauu kamu temenin
+                bobo sayanggkuu mwehhee. sayangg jgn lupaa jg buat senyumm, buat
+                bahagiaa yaaa, klo kamu capekk inget, ada banyak org yg sayangg
+                sama kamu, termasuk aku. aku selalu nungguin kamu jg sayangg,
+                kita saling doainn yaa sayangg, trs jg saling berjuang
+                dlu....nnti adaa waktunya kita barengg mwehehe. initnyaa kamu
+                segalanyaa buat aku sayangg, kamu itu doa aku yg udh aku doain,
+                kamu jg jawaban dari perasaan aku dari 3 tahun lalu mweheheheh.
+                yaaa aku bingung mau ngomong apa lgi sayangg, soalnyaa emg
+                gabisaa diungkapin pake kata-kata mwehehe, bisanyaaa pake
+                ciumann, pelukan dari kamuu sayangggg. tungguin akuu yaa
+                sayanggg, nnti ini semua selesai aku bakal dateng lgsg ke kamuu.
+                I LOVE YOU SAYANGGG SELAMANYAA, DAN LEBIH DARI APAPUN
+                MUACHHH💋💋💋💋
+                <br /><br />
+                Aku sayang kamu ❤️
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hint">sayanggg, dibukaa yaa suratnaya mwehehee</div>
+    </div>
+
+    <img
+      id="heart"
+      class="fly-heart"
+      src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
+    />
+    <div id="msg" class="msg">
+      sayangg, klo udh selesai bacanyaa di klik yaaa hatinyaaa ❤️
+    </div>
+
+    <div id="final" class="scene final">
+      <div class="bouquet">
+        <img src="foto.jpg" alt="" srcset="" width="50%" />
+      </div>
+      <div id="loveText" class="love"></div>
+    </div>
+
+    <script>
+      const env = document.getElementById("env");
+      const wrap = document.getElementById("wrap");
+      const heart = document.getElementById("heart");
+      const msg = document.getElementById("msg");
+      const blur = document.getElementById("blur");
+      const final = document.getElementById("final");
+      const loveText = document.getElementById("loveText");
+      const bgMusic = document.getElementById("bgMusic");
+      bgMusic.volume = 0.3;
+      let step = 0;
+
+      wrap.onclick = () => {
+        if (step === 0) {
+          env.classList.add("open", "peek");
+          step = 1;
+        } else if (step === 1) {
+          env.classList.remove("peek");
+          env.classList.add("full");
+
+          blur.classList.add("show");
+
+          bgMusic.play();
+
+          step = 2;
+
+          setTimeout(() => {
+            heart.classList.add("fly");
+            msg.style.display = "block";
+          }, 5000);
+        }
+      };
+
+      heart.onclick = () => {
+        document.getElementById("scene1").style.display = "none";
+        heart.style.display = "none";
+        msg.style.display = "none";
+        blur.classList.remove("show");
+
+        final.style.display = "flex";
+
+        for (let i = 0; i < 35; i++) {
+          const p = document.createElement("div");
+          p.className = "petal";
+          p.innerHTML = Math.random() > 0.5 ? "🌸" : "🌺";
+          p.style.left = Math.random() * 100 + "vw";
+          p.style.animationDuration = 4 + Math.random() * 5 + "s";
+          document.body.appendChild(p);
+        }
+
+        const text = "I Love You Selamanya Sayangg ❤️";
+        let i = 0;
+
+        const typing = setInterval(() => {
+          loveText.textContent += text[i];
+          i++;
+          if (i >= text.length) clearInterval(typing);
+        }, 90);
+      };
+    </script>
+  </body>
+</html>
